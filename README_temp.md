@@ -43,31 +43,41 @@ This project analyzes the **Uber Fares Dataset** to gain insights into fare patt
 ### 1️⃣ Data Loading & Initial Exploration
 
 - Loaded raw CSV data into a Pandas DataFrame.
+  ![Alt text](./load_data.png)
 - Checked dataset dimensions, column data types, and missing values.
 - Verified data quality and identified inconsistencies.
+  ![Alt text](./data_initial_exploration.png)
 
 ### 2️⃣ Data Cleaning
 
-- Removed or imputed missing values.
+- Removed missing values.
 - Dropped duplicate records.
-- Standardized data types (e.g., timestamps to `datetime`).
+  ![Alt text](./cleaning.png)
 
 ### 3️⃣ Exploratory Data Analysis (EDA)
 
 - Generated descriptive statistics: mean, median, mode, quartiles.
 - Visualized fare amount distributions and outliers.
-- Analyzed relationships:
-  - **Fare vs. Distance**
-  - **Fare vs. Time of Day**
+  ![alt text](Exploratory_analysis.png)
+  ![alt text](image-1.png)
 
 ### 4️⃣ Feature Engineering
 
+-Convertion from coordinates to distance in kilometers using the Haversine formula and applying it to the dataset
+![alt text](image-2.png)
+-Remove empty values from coordinates to avoid biased results
+-Ignore unrealistic distances
+![alt text](image-3.png)
+
 - Extracted **hour**, **day**, **month**, and **weekday** from ride timestamps.
+  ![alt text](image-4.png)
 - Created **peak/off-peak** time indicators based on ride hours.
+  ![alt text](image-5.png)
 
 ### 5️⃣ Export for Power BI
 
 - Saved the cleaned and enhanced dataset as a CSV for easy Power BI import.
+  ![alt text](image-6.png)
 
 ### 6️⃣ Power BI Dashboard Development
 
@@ -93,7 +103,7 @@ This project analyzes the **Uber Fares Dataset** to gain insights into fare patt
 - Most fares cluster within a certain range, with a few high-cost outliers.
 - Clear correlation between distance traveled and fare amount.
 - Peak fare hours align with typical commuting times.
-- Weekdays such as Monday, Tuesday, Wednesday, Thursday and Friday show higher ride volumes during working hours than weekends. And the later shows higher rides volumes during midnight
+- Weekdays from Monday to Friday show higher ride volumes during working hours than weekends. And the later shows higher rides volumes during midnight
 
 ---
 
